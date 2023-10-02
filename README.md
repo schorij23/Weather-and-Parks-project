@@ -3,6 +3,9 @@
 ## USER Story
 
 ```
+AS A traveler
+I WANT to see the weather outlook for multiple parks
+SO THAT I can plan around the weather
 
 ```
 
