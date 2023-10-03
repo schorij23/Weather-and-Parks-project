@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Global Park Weather</title>
-    <link href="http://ip-api.com/json/{ip}">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -21,19 +20,16 @@
         <div id="Opening" class="opening">
             <p>Hello and welcome to the park weather planner! Enter a state below to see the weather forecast for national parks in that area.</p>
         </div>
-<!-- This section might be better as a dropdown -->
+        
+        <!-- This section might be better as a dropdown -->
         <form id="search-input" class="search">
             <label for="search">Enter Your Park Here:</label>
             <input type="text" id="search" name="SearchBar" placeholder="Search">
+            <button id="search-button" type="button">Search</button>
         </form>
 
-        <div>
-            <button id="search-button">Search</button>
-        </div>
-
         <div class="parks-content">
-
-
+            <!-- Content related to park weather forecast goes here -->
         </div>
 
         <div class="about">
@@ -41,12 +37,14 @@
             <p>National park weather is a window into the natural world within these pristine landscapes. It helps visitors plan adventures, hikes, and moments of respite while fostering a deep appreciation for nature's delicate balance within our cherished parks.</p>
         </div>
 
-        <div class="our mission">
+        <div class="mission">
             <h2>Mission Statement</h2>
             <p>Our mission is to empower your national park adventures with accurate and timely weather information, ensuring your safety and enhancing your enjoyment of these natural wonders.</p>
         </div>
     </main>
-</body>
 
-<script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
 </html>
+
+
