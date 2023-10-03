@@ -14,33 +14,39 @@
     </header>
 
     <main>
-        <section class="background">
+        <div class="background">
             <!-- Background image or content goes here -->
-        </section>
+        </div>
 
-        <section id="Opening" class="opening">
+        <div id="Opening" class="opening">
             <p>Hello and welcome to the park weather planner! Enter a park or location below to see the weather forecast for national parks in that area.</p>
-        </section>
-
-        <section id="SearchBar" class="search">
+        </div>
+<!-- This section might be better as a dropdown -->
+        <form id="search-input" class="search">
             <label for="search">Enter Your Park Here:</label>
-            <input type="text" id="search" name="SearchBar">
+            <input type="text" id="search" name="SearchBar" placeholder="Search">
+        </form>
+
+        <div>
             <button id="search-button">Search</button>
-        </section>
+        </div>
 
-        <section class="weather-forecast">
-            <!-- Weather forecast content goes here -->
-        </section>
+        <div class="parks-content">
 
-        <section class="about">
+
+        </div>
+
+        <div class="about">
             <h2>About Global Park Weather</h2>
             <p>National park weather is a window into the natural world within these pristine landscapes. It helps visitors plan adventures, hikes, and moments of respite while fostering a deep appreciation for nature's delicate balance within our cherished parks.</p>
-        </section>
+        </div>
 
-        <section class="our mission">
+        <div class="our mission">
             <h2>Mission Statement</h2>
             <p>Our mission is to empower your national park adventures with accurate and timely weather information, ensuring your safety and enhancing your enjoyment of these natural wonders.</p>
-        </section>
+        </div>
     </main>
 </body>
+
+<script src="./assets/js/script.js"></script>
 </html>
