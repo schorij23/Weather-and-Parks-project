@@ -13,38 +13,42 @@
     </header>
 
     <main>
-        <div class="background">
+        <section class="background">
             <!-- Background image or content goes here -->
-        </div>
+        </section>
 
-        <div id="Opening" class="opening">
-            <p>Hello and welcome to the park weather planner! Enter a state below to see the weather forecast for national parks in that area.</p>
-        </div>
-        
-        <!-- This section might be better as a dropdown -->
-        <form id="search-input" class="search">
+        <section id="opening" class="opening">
+            <p>Hello and welcome to the park weather planner! Enter a park or location below to see the weather forecast for national parks in that area.</p>
+        </section>
+
+        <section id="search-bar" class="search">
             <label for="search">Enter Your Park Here:</label>
-            <input type="text" id="search" name="SearchBar" placeholder="Search">
-            <button id="search-button" type="button">Search</button>
-        </form>
+            <input type="text" id="search" name="SearchBar" placeholder="Search for a park">
+            <button id="search-button">Search</button>
+        </section>
 
-        <div class="parks-content">
-            <!-- Content related to park weather forecast goes here -->
-        </div>
+        <section id="park-display">
+            <h2>Park Information</h2>
+            <div id="park-display-container"></div>
+        </section>
 
-        <div class="about">
+        <section class="weather-forecast">
+            <!-- Weather forecast content goes here -->
+        </section>
+
+        <section class="about">
             <h2>About Global Park Weather</h2>
             <p>National park weather is a window into the natural world within these pristine landscapes. It helps visitors plan adventures, hikes, and moments of respite while fostering a deep appreciation for nature's delicate balance within our cherished parks.</p>
-        </div>
+        </section>
 
-        <div class="mission">
+        <section class="mission">
             <h2>Mission Statement</h2>
             <p>Our mission is to empower your national park adventures with accurate and timely weather information, ensuring your safety and enhancing your enjoyment of these natural wonders.</p>
-        </div>
+        </section>
     </main>
-
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/displaydata.js"></script>
 </body>
 </html>
+
 
 
