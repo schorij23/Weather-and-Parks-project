@@ -5,7 +5,10 @@ var apiKey = "a5TRtoX59To11woolQUJEs2WY34dc0AZ6MppUzci";
 var searchBtn = document.getElementById("search-button");
 // Add click event listener to the Search button
 searchBtn.addEventListener("click", fetchParkData);
-
+// Activate Dark mode Implementation
+var darkMode = document.getElementById("darkMode");
+// Add event listener for darkmode button
+darkMode.addEventListener("click", toggleDarkMode);
 // Function to fetch park data
 function fetchParkData() {
     // Clear previous park information when a new search is initiated
@@ -280,3 +283,8 @@ function clearParkDisplay() {
 // Clears any content from the park-display
     parkDisplayContainer.innerHTML = "";
 }
+// Function that activates Dark Mode CSS Class
+function toggleDarkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  }
