@@ -3,10 +3,20 @@
     text-align: center;
 }
 
-/* Style for elements with class "h1" */
-.h1 {
+/* Style for the header element */
+.header {
     display: block;
     margin: 0 auto; /* Center-align horizontally */
     background-image: url('National-Park-Service-logo.jpg');
     background-size: cover; /* Adjust the background image size as needed */
+    width: 100%; /* Take up the full width of its parent */
+    height: 200px; /* Set an appropriate height */
 }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        height: 150px; /* Adjust the height for smaller screens */
+    }
+}
+
