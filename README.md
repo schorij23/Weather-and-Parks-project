@@ -22,5 +22,5 @@ THIS Application uses a CSS framework other than Bootstrap
 Application is interactive (accepts and responds to user input)
 
 ```
-https://rgillooly.github.io/Project-1-Weather-And-Parks/
+https://rgillooly.github.io/Project-1-Weather-And-Parks
 https://github.com/rgillooly/Project-1-Weather-And-Parks
