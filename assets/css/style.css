@@ -1,22 +1,107 @@
-/* Center-align elements with class "opening" and "search" */
-.opening, .search {
-    text-align: center;
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
 }
 
-/* Style for the header element */
-.header {
-    display: block;
-    margin: 0 auto; /* Center-align horizontally */
-    background-image: url('National-Park-Service-logo.jpg');
-    background-size: cover; /* Adjust the background image size as needed */
-    width: 100%; /* Take up the full width of its parent */
-    height: 200px; /* Set an appropriate height */
+html {
+  height: 100%;
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .header {
-        height: 150px; /* Adjust the height for smaller screens */
-    }
+body {
+  min-height: 100%;
 }
 
+/* Header Styles */
+.h1 {
+  text-align: center; /* Center-align the heading */
+}
+
+/* Opening Section Styles */
+.opening {
+  text-align: center;
+}
+
+/* Button Styles */
+button {
+  background-color: rgb(1, 1, 35);
+  color: white;
+  height: 30px;
+}
+
+/* Search Section Styles */
+.search {
+  text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: black;
+  color: white;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Park Display Styles */
+.park-display-container {
+  display: flex;
+}
+
+/* Weather Forecast Styles */
+.weather-forecast {
+  display: flex;
+  /* Add your styles for the weather forecast section here */
+}
+
+/* Forecast Cards Styles */
+.forecast-cards-container {
+  display: flex;
+  justify-content: space-between; /* Distributes cards evenly */
+}
+
+.forecast-card {
+  background-color: rgb(1, 1, 35);
+  color: white;
+  /* Add styles for individual forecast cards here */
+  width: calc(20% - 25px); /* Adjust the width to fit five cards in a row */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
