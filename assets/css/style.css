@@ -1,15 +1,12 @@
-.h1{
+/* Center-align elements with class "opening" and "search" */
+.opening, .search {
+    text-align: center;
+}
+
+/* Style for elements with class "h1" */
+.h1 {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
+    margin: 0 auto; /* Center-align horizontally */
     background-image: url('National-Park-Service-logo.jpg');
-}
-
-.opening {
-    text-align: center;
-}
-
-.search {
-    text-align: center;
+    background-size: cover; /* Adjust the background image size as needed */
 }
