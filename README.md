@@ -27,3 +27,5 @@ https://rgillooly.github.io/Project-1-Weather-And-Parks
 
 
 https://github.com/rgillooly/Project-1-Weather-And-Parks
+
+![Screenshot 2023-10-05 at 20-48-19 National Park Weather](https://github.com/rgillooly/Project-1-Weather-And-Parks/assets/5600528/55dac4ec-deb9-486f-b212-73fc2357700c)
