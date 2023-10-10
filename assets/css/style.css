@@ -102,7 +102,6 @@
   .forecast-card {
     background-color: rgb(1, 1, 35);
     color: white;
-    /* Add styles for individual forecast cards here */
     width: calc(20% - 25px); /* Adjust the width to fit five cards in a row */
     margin: 10px;
     padding: 10px;

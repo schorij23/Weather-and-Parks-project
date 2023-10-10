@@ -16,6 +16,7 @@ function fetchParkData() {
     localStorage.removeItem('parkURL');
     localStorage.removeItem('parkDescription');
     localStorage.removeItem('parkImage');
+    localStorage.removeItem('weatherForecastData');
 
     // Get the input in lowercase (most people type lowercase)
     var parkName = document.getElementById("search").value.toLowerCase();
@@ -29,37 +30,37 @@ function fetchParkData() {
             return response.json();
         })
         .then(function (data) {
-    // Filter parks including just only the searched park    
+        // Filter parks including just only the searched park    
         var matchingParks = data.data.filter(function (park) {
-// Check if the park's name matches (most type in lowercase)
+            // Check if the park's name matches (most type in lowercase)
             return park.fullName.toLowerCase().includes(parkName);
         });
-// If there is a matching park
+            // If there is a matching park
             if (matchingParks.length > 0) {
                 console.log(matchingParks);
-// Get the gps lat and lon of the first park in the array
+            // Get the gps lat and lon of the first park in the array
             var latitude = matchingParks[0].latitude;
             var longitude = matchingParks[0].longitude;
 
-// Display the first matching park's information
+                // Display the first matching park's information
                 displayParkInfo(matchingParks[0]);
 
             fetchWeatherForecast(latitude,longitude);
             } else {
-        // Log if there are no matching parks
+            // Log if there are no matching parks
             console.log("No matching parks found");
 
-    // Show the modal when no matching park is found
+            // Show the modal when no matching park is found
             var modal = document.getElementById("noMatchingParkModal");
             modal.style.display = "block"
         }
 
     })    
-    // Error handler variable contains an object with information about the error
+        // Error handler variable contains an object with information about the error
         .catch(function(error) {
             console.error("Error fetching park data:", error);
         });
-       // Close the modal when clicking the close x    
+        // Close the modal when clicking the close x    
         var closeModalBtn = document.getElementById("noMatchingParkModal");
         if (closeModalBtn) {
         closeModalBtn.addEventListener("click", function () {
@@ -79,11 +80,13 @@ function fetchParkData() {
 function fetchWeatherForecast(latitude, longitude) {
     // Clear previous park information when a new search is initiated
     localStorage.removeItem('weatherForecastData');
-    
+    //weatherAPI Url
     var openWeatherMapApiKey = '876fe47417eaaeff0f787d1ddd261473';
     var weatherForecastAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${openWeatherMapApiKey}&units=imperial`;
 
+    // Fetch the weather forecast data
     fetch(weatherForecastAPI)
+        // Return the JSON data from the response
         .then(function (response) {
             return response.json();
         })
@@ -92,6 +95,7 @@ function fetchWeatherForecast(latitude, longitude) {
     // Process the weather forecast data here and display it on your webpage
             displayWeatherForecast(data);
         })
+        // Error handler variable contains an object with information about the error
         .catch(function (error) {
             console.error('Error fetching weather forecast: ', error);
         });
@@ -152,14 +156,17 @@ function displayParkInfo(park) {
         // Create elements to display the stored park information
         var parkNameEl = document.createElement('h3');
         parkNameEl.textContent = storedParkName;
-
+        
+        //url link to National Park Service website
         var parkURLEl = document.createElement('a');
         parkURLEl.href = storedParkURL;
         parkURLEl.textContent = "Visit Park Website @ National Park Service";
-
+        
+        // Create a p element and add description content
         var parkDescriptionEl = document.createElement('p');
         parkDescriptionEl.textContent = storedParkDescription;
-
+        
+        // Create an image element for the image associated with the park website
         var parkImageEl = document.createElement('img');
         parkImageEl.src = storedParkImage;
         parkImageEl.alt = storedParkName;
@@ -186,7 +193,7 @@ function displayWeatherForecast(weatherData) {
     weatherForecastSection.innerHTML = '';
 
     var forecastData = [];
-
+    // Loop through the weather data list and select every 8th element for the forecast
     for (var i = 0; i < weatherData.list.length; i+=8) {
         var forecast = weatherData.list[i];
 
@@ -194,19 +201,24 @@ function displayWeatherForecast(weatherData) {
         var forecastCard = document.createElement('div');
         forecastCard.classList.add('forecast-card');
 
+        // Create a new p element to siplay the date also convert unix timepstamp
         var dateElement = document.createElement('p');
         dateElement.textContent = new Date(forecast.dt * 1000).toLocaleDateString();
 
+        // Create a new imake element to disply icon
         var icon = document.createElement('img');
         icon.src = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`
 
+        // Create a new p element to display the Temperature in Fareinght
         var temperatureElement = document.createElement('p');
         temperatureElement.textContent = 'Temperature: ' + Math.round(forecast.main.temp) + '°F';
 
+        // Create a new p element to display the wind speed
         var windSpeedMetPS = forecast.wind.speed;
         var windSpeed = document.createElement("p");
         windSpeed.textContent = "Wind Speed: " + windSpeedMetPS.toFixed(1) + " mph";
 
+        // Create new p element to diplay the weather discription
         var descriptionElement = document.createElement('p');
         descriptionElement.textContent = 'Description: ' + forecast.weather[0].description;
 
@@ -228,6 +240,7 @@ function displayWeatherForecast(weatherData) {
             description: descriptionElement.textContent
         });
     }
+    // Store the forecastData in localStorage as a JSON string
     localStorage.setItem('weatherForecastData', JSON.stringify(forecastData));
 }
 
@@ -242,6 +255,7 @@ function displayWeatherForecast(weatherData) {
         var weatherForecastSection = document.querySelector('.forecast-cards-container');
         weatherForecastSection.innerHTML = '';
 
+        // Loop through the array using a foreach loop and add class forcast card
         forecastDataArray.forEach(function (forecastData) {
             var forecastCard = document.createElement('div');
             forecastCard.classList.add('forecast-card');
@@ -250,15 +264,19 @@ function displayWeatherForecast(weatherData) {
             var dateElement = document.createElement('p');
             dateElement.textContent = forecastData.date;
 
+            // Create a new imake element to disply icon
             var icon = document.createElement('img');
             icon.src = forecastData.icon;
         
+            // Create a new p element to display the Temperature in Fareinght
             var temperatureElement = document.createElement('p');
             temperatureElement.textContent = forecastData.temperature;
         
+            // Create a new p element to display the wind speed
             var windSpeedElement = document.createElement('p');
             windSpeedElement.textContent = forecastData.windSpeed;
         
+            // Create new p element to diplay the weather discription
             var descriptionElement = document.createElement('p');
             descriptionElement.textContent = forecastData.description;
         
