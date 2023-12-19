@@ -17,7 +17,6 @@ WHEN I search for a National Park
 THEN I am presented with information about the National Park and About the Weather
 THIS Application must use 2 different server-side APIs
 THE Application uses client-side store to store persistent data
-THIS Application uses modals insted doesn't use JS alerts, prompts, or confirms
 Application is interactive (accepts and responds to user input)
 
 ```
