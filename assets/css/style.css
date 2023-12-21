@@ -96,16 +96,21 @@
   .forecast-cards-container {
     display: flex;
     justify-content: space-between; /* Distributes cards evenly */
-    
   }
   
   .forecast-card {
     background-color: rgb(1, 1, 35);
     color: white;
-    width: calc(20% - 25px); /* Adjust the width to fit five cards in a row */
+    /* width: calc(20% - 25px); Adjust the width to fit five cards in a row */
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     
+  }
+
+  @media screen and (max-width: 680px) {
+    .forecast-cards-container {
+      flex-direction: column;
+    }
   }

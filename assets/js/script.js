@@ -1,6 +1,5 @@
 //Sets up the National Park Service API key and open weather below it
 var apiKey = "a5TRtoX59To11woolQUJEs2WY34dc0AZ6MppUzci";
-
 // Get a reference to the "Search" button.
 var searchBtn = document.getElementById("search-button");
 // Add click event listener to the Search button
@@ -9,6 +8,8 @@ searchBtn.addEventListener("click", fetchParkData);
 var darkMode = document.getElementById("darkMode");
 // Add event listener for darkmode button
 darkMode.addEventListener("click", toggleDarkMode);
+
+
 // Function to fetch park data
 function fetchParkData() {
     // Clear previous park information when a new search is initiated
